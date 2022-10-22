@@ -66,7 +66,10 @@ class TickerDisplay(MatrixConnector):
         self.pos = self.offscreen_canvas.width
 
         self.font = graphics.Font()
-        self.font.LoadFont("lib/fonts/7x13.bdf")
+        try:
+            self.font.LoadFont("lib/fonts/7x13.bdf")
+        except e:
+            self.font.LoadFont("ticker/lib/fonts/7x13.bdf")
         self.textColor = graphics.Color(255, 255, 0)
 
         self.text_to_display = text

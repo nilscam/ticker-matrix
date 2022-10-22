@@ -32,7 +32,7 @@ class MatrixRunner:
             if self.mode == MatrixModes.TICKER:
                 self.ticker.run_epoch()
             elif self.mode == MatrixModes.CLOCK:
-                print("clock", flush=True)
+                print("running epoch on mode : 'clock'", flush=True)
 
     def set_running(self, is_running: bool) -> None:
         self.is_running = is_running
