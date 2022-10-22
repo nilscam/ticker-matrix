@@ -37,7 +37,7 @@ def format_market_data(data):
 def format_data(data):
     formatted_data = {
         "value": data.get("close"),
-        "evolution": (data.get("open") - data.get("close")) / data.get("open")
+        "evolution": (data.get("close") - data.get("open")) / data.get("open")
     }
 
     return formatted_data
