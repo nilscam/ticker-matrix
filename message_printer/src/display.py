@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # Display a runtext with double-buffering.
-from lib.matrix_connector import MatrixConnector
+from message_printer.lib.matrix_connector import MatrixConnector
 from rgbmatrix import graphics
 
 
 class MessagePrinterDisplay(MatrixConnector):
     def __init__(self, text):
-        super().__init__()
+        self.connect()  # connect to matrix api, extend of MatrixConnector
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.pos = self.offscreen_canvas.width
 
