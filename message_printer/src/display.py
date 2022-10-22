@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Display a runtext with double-buffering.
-from message_printer.lib.matrix_connector import MatrixConnector
+# from message_printer.lib.matrix_connector import MatrixConnector
+from lib.matrix_connector import MatrixConnector
 from rgbmatrix import graphics
 
 
