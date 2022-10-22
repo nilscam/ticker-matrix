@@ -1,6 +1,6 @@
 import src.data.crypto as stock
 import src.data.crypto as crypto
-from ticker.src.display import TickerDisplay
+from src.display import TickerDisplay
 
 
 # async def run_epoch():
