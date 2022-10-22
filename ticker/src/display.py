@@ -90,8 +90,8 @@ class TickerDisplay(MatrixConnector):
             self.pos = self.offscreen_canvas.width
 
 
-# Main function
-def run_text(message):
+# Demo function
+def demo_ticker_display(message):
     print("message displaying on matrix : ", message)
     ticker_display = TickerDisplay(message)
     # if not ticker_display.connect():

@@ -8,6 +8,7 @@ from src.utils import format_market_data_to_display
 
 import src.data.stock as stock
 import src.data.crypto as crypto
+from src.display import demo_ticker_display
 
 # Main
 def main():
@@ -21,7 +22,8 @@ def main():
         stock_data
     ) + format_market_data_to_display(crypto_data)
     print(message_to_display)
-    # display.run_text(message_to_display)
+
+    demo_ticker_display(message_to_display)
 
 
 # Launcher
