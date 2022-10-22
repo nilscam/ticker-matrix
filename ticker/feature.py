@@ -26,8 +26,7 @@ class Ticker:
         self.displayer = TickerDisplay(self.message_to_display)
 
     def run_epoch(self):
-        if self.is_running:
-            self.displayer.run_epoch()
+        self.displayer.run_epoch()
 
     def refresh_data(self):
         self.stock_data = stock.get_stock_data()
