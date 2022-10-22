@@ -9,6 +9,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 class MatrixConnector(object):
     def __init__(self, *args, **kwargs):
+        print("MatrixConnector init")
         # self.parser = argparse.ArgumentParser()
 
         # self.parser.add_argument(
@@ -151,7 +152,7 @@ class MatrixConnector(object):
         options.chain_length = 2
         options.parallel = 1
         options.gpio_slowdown = 3
-        options.hardware_mapping = 'adafruit-hat'
+        options.hardware_mapping = "adafruit-hat"
 
         options.row_address_type = 0
         options.multiplexing = 0
@@ -161,9 +162,6 @@ class MatrixConnector(object):
         options.led_rgb_sequence = "RGB"
         options.pixel_mapper_config = ""
         options.panel_type = ""
-
-
-
 
         # Parser
         # if self.args.led_gpio_mapping != None:
