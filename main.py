@@ -26,7 +26,7 @@ class MatrixRunner:
         self.mode = MatrixModes.TICKER
         self.is_running = False
         self.ticker = Ticker()
-        self.message_printer = MessagePrinter()
+        self.message_printer = MessagePrinter("")
 
     def set_running(self, is_running: bool) -> None:
         self.is_running = is_running
