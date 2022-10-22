@@ -1,4 +1,4 @@
-from src.display import MessagePrinterDisplay
+from message_printer.src.display import MessagePrinterDisplay
 
 
 class MessagePrinter:
