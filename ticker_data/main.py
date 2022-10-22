@@ -5,7 +5,7 @@
 # Imports
 import display
 import data_manager.main as data_manager
-import format_market_data from utils
+from utils import format_market_data
 
 # Main
 def main():
