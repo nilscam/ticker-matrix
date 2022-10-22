@@ -68,7 +68,7 @@ class TickerDisplay(MatrixConnector):
         self.font = graphics.Font()
         try:
             self.font.LoadFont("lib/fonts/7x13.bdf")
-        except e:
+        except:
             self.font.LoadFont("ticker/lib/fonts/7x13.bdf")
         self.textColor = graphics.Color(255, 255, 0)
 
