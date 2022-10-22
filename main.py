@@ -1,11 +1,11 @@
 import asyncio
-import multiprocessing
 from time import sleep
 from typing import Union
 from enum import Enum
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+from ticker.ticker import Ticker
 
 app = FastAPI()
 
@@ -19,6 +19,7 @@ class MatrixRunner:
     def __init__(self) -> None:
         self.mode = MatrixModes.TICKER
         self.is_running = False
+        self.ticker = Ticker()
 
     def set_mode(self, mode: str) -> None:
         self.mode = mode
@@ -26,7 +27,7 @@ class MatrixRunner:
     def run_epoch(self):
         if self.is_running:
             if self.mode == MatrixModes.TICKER:
-                print("ticking", flush=True)
+                self.ticker.run_epoch()
             elif self.mode == MatrixModes.CLOCK:
                 print("clock", flush=True)
 
@@ -40,7 +41,7 @@ runner = MatrixRunner()
 async def run_epoch():
     while True:
         runner.run_epoch()
-        await asyncio.sleep(1 / 2)  # 60 fps
+        await asyncio.sleep(1 / 20)  # 60 fps
 
 
 loop = asyncio.get_event_loop()

@@ -11,13 +11,11 @@ from config import CURRENCY
 # Call API
 def call_api(url):
     full_url = API_ENDPOINT + url + "?apiKey=" + API_KEY
-    headers = {
-        "Content-Type": "application/json",
-        "X-Polygon-Key": API_KEY
-    }
+    headers = {"Content-Type": "application/json", "X-Polygon-Key": API_KEY}
     response = requests.get(full_url, headers=headers)
     data = response.json()
-    return (data)
+    return data
+
 
 # Call Stock API
 def call_stock_api(stock):
@@ -25,6 +23,7 @@ def call_stock_api(stock):
     url = API_STOCK_URL.format(stocksTicker=stock, date=yesterday)
     data = call_api(url)
     return data
+
 
 # Call Crypto API
 def call_crypto_api(crypto):
