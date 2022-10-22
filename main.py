@@ -1,10 +1,13 @@
+import sys
+
+# Append path for every feature
+sys.path.append("./ticker")
+
+
 import asyncio
-from time import sleep
-from typing import Union
 from enum import Enum
 
 from fastapi import FastAPI
-from pydantic import BaseModel
 from ticker.ticker import Ticker
 
 app = FastAPI()
