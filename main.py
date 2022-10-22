@@ -8,7 +8,7 @@ import asyncio
 from enum import Enum
 
 from fastapi import FastAPI
-from ticker.ticker import Ticker
+from ticker.feature import Ticker
 
 app = FastAPI()
 
