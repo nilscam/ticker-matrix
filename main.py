@@ -2,20 +2,23 @@ import sys
 
 # Append path for every feature
 sys.path.append("./ticker")
+sys.path.append("./message_printer")
 
 
 import asyncio
 from enum import Enum
+from pydantic import BaseModel
 
 from fastapi import FastAPI
 from ticker.feature import Ticker
+from message_printer.feature import MessagePrinter
 
 app = FastAPI()
 
 
 class MatrixModes(str, Enum):
     TICKER = "ticker"
-    CLOCK = "clock"
+    MESSAGE_PRINTER = "message_printer"
 
 
 class MatrixRunner:
@@ -23,19 +26,24 @@ class MatrixRunner:
         self.mode = MatrixModes.TICKER
         self.is_running = False
         self.ticker = Ticker()
+        self.message_printer = MessagePrinter()
 
-    def set_mode(self, mode: str) -> None:
-        self.mode = mode
+    def set_running(self, is_running: bool) -> None:
+        self.is_running = is_running
 
     def run_epoch(self):
         if self.is_running:
             if self.mode == MatrixModes.TICKER:
                 self.ticker.run_epoch()
-            elif self.mode == MatrixModes.CLOCK:
-                print("running epoch on mode : 'clock'", flush=True)
+            elif self.mode == MatrixModes.MESSAGE_PRINTER:
+                self.message_printer.run_epoch()
 
-    def set_running(self, is_running: bool) -> None:
-        self.is_running = is_running
+    def set_message_printer_mode(self, message):
+        self.mode = MatrixModes.MESSAGE_PRINTER
+        self.message_printer.set_message(message)
+
+    def set_ticker_mode(self):
+        self.mode = MatrixModes.TICKER
 
 
 runner = MatrixRunner()
@@ -68,7 +76,17 @@ def mode():
     return {"running": False}
 
 
-@app.put("/{mode}")
-def set_mode(mode: MatrixModes):
-    runner.set_mode(mode)
-    return {"mode_set": mode}
+@app.put("/ticker")
+def set_mode():
+    runner.set_ticker_mode()
+    return {"mode_set": "ticker"}
+
+
+class MessagePrinterBody(BaseModel):
+    message: str
+
+
+@app.put("/message_printer")
+def set_mode(message: MessagePrinterBody):
+    runner.set_message_printer_mode(message)
+    return {"mode_set": "message_printer"}
