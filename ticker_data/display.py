@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Display a runtext with double-buffering.
 import sys
-from samplebase import SampleBase
+from lib.matrix_connector import SampleBase
 from rgbmatrix import graphics
 import time
 
