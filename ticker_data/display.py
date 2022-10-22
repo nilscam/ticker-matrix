@@ -5,16 +5,6 @@ from lib.matrix_connector import MatrixConnector
 from rgbmatrix import graphics
 import time
 
-# Imports
-import utils
-
-# Market Data
-def market_data(market_data):
-		message(utils.format_market_data(market_data))
-
-# Message
-def message(msg):
-    print(msg)
 
 class RunText(MatrixConnector):
     def __init__(self, *args, **kwargs):
@@ -48,13 +38,14 @@ class RunText(MatrixConnector):
 
 # Main function
 def run_text(message):
+    print("message displaying on matrix : ", message)
     run_text = RunText()
     if not run_text.connect():
         run_text.print_help()
     try:
         # Start loop
         print("Press CTRL-C to stop sample")
-        run_text.run()
+        run_text.run(message)
     except KeyboardInterrupt:
         print("Exiting\n")
         sys.exit(0)

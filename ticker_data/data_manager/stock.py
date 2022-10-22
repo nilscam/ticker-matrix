@@ -8,11 +8,7 @@ import data_manager.api as api
 import utils
 
 # Stocks
-stock_list = [
-    APPLE,
-    GOOGLE,
-    NETFLIX
-]
+stock_list = [APPLE, GOOGLE, NETFLIX]
 
 # Get Stock Data
 def get_stock_data():
