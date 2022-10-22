@@ -13,7 +13,7 @@ from src.display import TickerDisplay
 # loop.create_task(self.refresh_data())
 
 
-class xxTicker:
+class Ticker:
     def __init__(self) -> None:
         self.stock_data = stock.get_stock_data()
         self.crypto_data = crypto.get_crypto_data()
