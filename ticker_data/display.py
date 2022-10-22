@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # Display a runtext with double-buffering.
 import sys
-from lib.matrix_connector import SampleBase
+from lib.matrix_connector import MatrixConnector
 from rgbmatrix import graphics
 import time
 
 
-class RunText(SampleBase):
+class RunText(MatrixConnector):
     def __init__(self, *args, **kwargs):
         super(RunText, self).__init__(*args, **kwargs)
         self.parser.add_argument(
