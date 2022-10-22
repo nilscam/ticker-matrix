@@ -23,7 +23,7 @@ class Ticker:
             self.stock_data
         ) + format_market_data_to_display(self.crypto_data)
 
-        self.displayer = TickerDisplay()
+        self.displayer = TickerDisplay(self.message_to_display)
 
     def run_epoch(self):
         if self.is_running:
