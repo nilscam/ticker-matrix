@@ -9,7 +9,7 @@ market_list = {"stock": STOCK_LIST, "crypto": CRYPTO_LIST}
 def format_market_data_to_display(data):
     formatted_url = ""
     for stock in data:
-        formatted_url += f"{stock['asset']} : ${stock['value']} ({stock['return']}%) "
+        formatted_url += f"{stock['asset']} : ${stock['value']} ({stock['return']} %) "
     return formatted_url
 
 
@@ -18,7 +18,9 @@ def format_data_from_api(asset: str, data: dict):
     formatted_data = {
         "asset": asset,
         "value": data.get("close"),
-        "return": (data.get("close") - data.get("open")) / data.get("open"),
+        "return": round(
+            ((data.get("close") - data.get("open")) / data.get("open")) * 100, 2
+        ),
     }
 
     return formatted_data

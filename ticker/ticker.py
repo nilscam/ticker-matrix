@@ -15,13 +15,9 @@ from ticker.src.display import TickerDisplay
 
 class Ticker:
     def __init__(self) -> None:
-        self.is_running = False
         self.stock_data = stock.get_stock_data()
         self.crypto_data = crypto.get_crypto_data()
         self.displayer = TickerDisplay()
-
-    def set_running(self, is_running: bool) -> None:
-        self.is_running = is_running
 
     def run_epoch(self):
         if self.is_running:

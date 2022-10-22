@@ -101,7 +101,7 @@ def demo_ticker_display(message):
         print("Press CTRL-C to stop sample")
         while True:
             ticker_display.run_epoch()
-            time.sleep(0.05)
+            time.sleep(0.01)
     except KeyboardInterrupt:
         print("Exiting\n")
         sys.exit(0)
