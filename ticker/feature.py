@@ -1,4 +1,4 @@
-import src.data.crypto as stock
+import src.data.stock as stock
 import src.data.crypto as crypto
 from src.display import TickerDisplay
 
@@ -13,7 +13,7 @@ from src.display import TickerDisplay
 # loop.create_task(self.refresh_data())
 
 
-class Ticker:
+class xxTicker:
     def __init__(self) -> None:
         self.stock_data = stock.get_stock_data()
         self.crypto_data = crypto.get_crypto_data()
