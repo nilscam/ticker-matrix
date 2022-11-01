@@ -20,7 +20,7 @@ class TickerDisplay:
         self.font.LoadFont("lib/fonts/14x26.bdf")
         # except:
         #     self.font.LoadFont("ticker/lib/fonts/7x13.bdf")
-        self.textColor = graphics.Color(255, 255, 0)
+        self.textColor = graphics.Color(255, 0, 255)
 
         self.text_to_display = text
 
