@@ -30,8 +30,6 @@ class MessagePrinterDisplay:
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         self.offscreen_canvas.Clear()
 
-        print("text displaying this epoch: " + self.text_to_display)
-
         #   draw
         len = graphics.DrawText(
             self.offscreen_canvas,
