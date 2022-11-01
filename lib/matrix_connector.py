@@ -2,7 +2,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 
 class MatrixConnector(object):
-    def connect(self):
+    def __init__(self) -> None:
         options = RGBMatrixOptions()
 
         options.rows = 64

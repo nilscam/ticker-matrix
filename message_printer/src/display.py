@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 # Display a runtext with double-buffering.
-# from message_printer.lib.matrix_connector import MatrixConnector
+import sys
+
+sys.path.append("../..")  # to import lib
+
 from lib.matrix_connector import MatrixConnector
 from rgbmatrix import graphics
 
 
 class MessagePrinterDisplay(MatrixConnector):
     def __init__(self, text):
-        self.connect()  # connect to matrix api, extend of MatrixConnector
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.pos = self.offscreen_canvas.width
 
         self.font = graphics.Font()
-        try:
-            self.font.LoadFont("lib/fonts/7x13.bdf")
-        except:
-            self.font.LoadFont("ticker/lib/fonts/7x13.bdf")
+        # try:
+        self.font.LoadFont("lib/fonts/7x13.bdf")
+        # except:
+        #     self.font.LoadFont("ticker/lib/fonts/7x13.bdf")
         self.textColor = graphics.Color(255, 0, 255)
 
         self.text_to_display = text
