@@ -147,7 +147,7 @@ class MatrixConnector(object):
 
         options = RGBMatrixOptions()
 
-        options.y = 32
+        options.y_origin = 32
         options.rows = 64
         options.cols = 64
         options.chain_length = 2
