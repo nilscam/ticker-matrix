@@ -33,7 +33,7 @@ class TickerDisplay:
             self.offscreen_canvas,
             self.font,
             self.pos,
-            ((64 / 2) - (13 / 2)),
+            (64 / 2),
             self.textColor,
             self.text_to_display,
         )
