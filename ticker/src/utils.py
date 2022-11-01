@@ -9,7 +9,7 @@ market_list = {"stock": STOCK_LIST, "crypto": CRYPTO_LIST}
 def format_market_data_to_display(data):
     formatted_url = ""
     for stock in data:
-        formatted_url += f"{stock['asset']} : ${stock['value']} (${ARROW_UP if stock['return'] > 0 else ARROW_DOWN}{stock['return']} %) "
+        formatted_url += f"{stock['asset']} : ${stock['value']} ({ARROW_UP if stock['return'] > 0 else ARROW_DOWN}{stock['return']} %) "
     return formatted_url
 
 
