@@ -10,6 +10,7 @@ from rgbmatrix import graphics
 
 class MessagePrinterDisplay(MatrixConnector):
     def __init__(self, text):
+        super().__init__()
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.pos = self.offscreen_canvas.width
 

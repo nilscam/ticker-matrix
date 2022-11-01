@@ -3,6 +3,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 class MatrixConnector(object):
     def __init__(self) -> None:
+        print("------ Matrix connecting ------")
         options = RGBMatrixOptions()
 
         options.rows = 64
@@ -22,3 +23,4 @@ class MatrixConnector(object):
         options.panel_type = ""
 
         self.matrix = RGBMatrix(options=options)
+        print("------ Matrix connected ------")
