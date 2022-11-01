@@ -26,7 +26,7 @@ class MatrixRunner:
         self.mode = MatrixModes.MESSAGE_PRINTER
         self.is_running = False
         self.ticker = Ticker()
-        self.message_printer = MessagePrinter("")
+        self.message_printer = MessagePrinter("Message par defaut")
 
     def set_running(self, is_running: bool) -> None:
         self.is_running = is_running
