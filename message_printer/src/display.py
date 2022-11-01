@@ -4,13 +4,13 @@ import sys
 
 sys.path.append("../..")  # to import lib
 
-from lib.matrix_connector import MatrixConnector
+from lib.matrix_connector import matrix
 from rgbmatrix import graphics
 
 
-class MessagePrinterDisplay(MatrixConnector):
+class MessagePrinterDisplay:
     def __init__(self, text):
-        super().__init__()
+        self.matrix = matrix
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.pos = self.offscreen_canvas.width
 

@@ -24,3 +24,6 @@ class MatrixConnector(object):
 
         self.matrix = RGBMatrix(options=options)
         print("------ Matrix connected ------")
+
+
+matrix = MatrixConnector()
