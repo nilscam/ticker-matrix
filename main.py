@@ -23,7 +23,7 @@ class MatrixModes(str, Enum):
 
 class MatrixRunner:
     def __init__(self) -> None:
-        self.mode = MatrixModes.TICKER
+        self.mode = MatrixModes.MESSAGE_PRINTER
         self.is_running = False
         self.ticker = Ticker()
         self.message_printer = MessagePrinter("")
