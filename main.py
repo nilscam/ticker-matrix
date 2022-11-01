@@ -26,7 +26,7 @@ class MatrixRunner:
         self.mode = MatrixModes.TICKER
         self.is_running = False
         self.ticker = Ticker()
-        self.message_printer = MessagePrinter("")
+        self.message_printer = MessagePrinter("No text defined")
 
     def set_running(self, is_running: bool) -> None:
         self.is_running = is_running
@@ -77,7 +77,7 @@ def mode():
 
 
 @app.put("/ticker")
-def set_mode():
+def set_mode_ticker():
     runner.set_ticker_mode()
     return {"mode_set": "ticker"}
 
@@ -87,6 +87,6 @@ class MessagePrinterBody(BaseModel):
 
 
 @app.put("/message_printer")
-def set_mode(message: MessagePrinterBody):
-    runner.set_message_printer_mode(message)
+def set_mode_message_printer(body: MessagePrinterBody):
+    runner.set_message_printer_mode(body.message)
     return {"mode_set": "message_printer"}
