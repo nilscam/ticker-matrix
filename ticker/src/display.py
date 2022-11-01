@@ -83,7 +83,7 @@ class TickerDisplay(MatrixConnector):
             self.offscreen_canvas,
             self.font,
             self.pos,
-            10,
+            ((64 / 2) - (13 / 2)),
             self.textColor,
             self.text_to_display,
         )
